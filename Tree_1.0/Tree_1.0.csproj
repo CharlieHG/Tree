@@ -135,6 +135,12 @@
     <Content Include="Content\sb-admin-2.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\undraw_posting_photo.svg" />
+    <Content Include="fonts\undraw_profile.svg" />
+    <Content Include="fonts\undraw_profile_1.svg" />
+    <Content Include="fonts\undraw_profile_2.svg" />
+    <Content Include="fonts\undraw_profile_3.svg" />
+    <Content Include="fonts\undraw_rocket.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />

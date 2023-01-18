@@ -12,8 +12,11 @@
     @*Patito*@
     <link rel="stylesheet" href="~/Content/sb-admin-2.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/vendor/fontawesome-free/css/all.min.css" asp-append-version="true" />
+    @*<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">*@
     <script src="https://kit.fontawesome.com/4569902b01.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+          rel="stylesheet" />
 </head>
 @*<body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -76,7 +79,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             <li class="nav-item active">
-                <a class="nav-link" href="@Url.Action("About", "Home")">
+                <a class="nav-link" href="@Url.Action("cInsercion", "Home")">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Características de la inserción</span>
                 </a>
@@ -195,7 +198,10 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                  
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -241,7 +247,6 @@
                 <div class="container-fluid">
                     @RenderBody()
 
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -286,24 +291,44 @@
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
-    <script src="~/vendor/jquery/jquery.min.js" asp-append-version="true"></script>
-    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="~/vendor/jquery-easing/jquery.easing.min.js" asp-append-version="true"></script>
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="~/Scripts/sb-admin-2.min.js" asp-append-version="true"></script>
+    <script src="~/Scripts/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    @*<script src="~/vendor/chart.js/Chart.min.js" asp-append-version="true"></script>*@
+    <script src="~/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="~/Scripts/demo/chart-area-demo.js" asp-append-version="true"></script>
-    <script src="~/Scripts/demo/chart-pie-demo.js" asp-append-version="true"></script>
-
+    <script src="~/Scripts/demo/chart-area-demo.js"></script>
+    <script src="~/Scripts/demo/chart-pie-demo.js"></script>
+    <script type="text/javascript">
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
+        })
+    </script>
+    <script type="text/javascript">
+        $('#exampleModal2').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
+        })
+    </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

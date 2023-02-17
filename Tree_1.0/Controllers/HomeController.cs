@@ -8,7 +8,7 @@ namespace Tree_1._0.Controllers
 {
     public class HomeController : Controller
     {
-        
+
 
         public ActionResult Index()
         {
@@ -36,9 +36,13 @@ namespace Tree_1._0.Controllers
             return View();
         }
 
-        public ActionResult Prueba()
+        public ActionResult Modal(string e)
         {
-            ViewData["ProductTitle"] = "Contact";
+            ViewData["ProductTitle"] = e;
+            return View();
+        }
+        public ActionResult Calendar()
+        {
             return View();
         }
     }

@@ -8,95 +8,63 @@
 @section Scripts{
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var Calendar = FullCalendar.Calendar;
-            var Draggable = FullCalendar.Draggable;
+    document.addEventListener('DOMContentLoaded', function () {
+                    var Calendar = FullCalendar.Calendar;
 
-            var containerEl = document.getElementById('external-events');
-            var calendarEl = document.getElementById('calendar');
-            var checkbox = document.getElementById('drop-remove');
-
-            // initialize the external events
-            // -----------------------------------------------------------------
-
-            new Draggable(containerEl, {
-                itemSelector: '.fc-event',
-                eventData: function (eventEl) {
-                    return {
-                        title: eventEl.innerText
-                    };
-                }
-            });
-
-            // initialize the calendar
-            // -----------------------------------------------------------------
-
-            var calendar = new Calendar(calendarEl, {
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
-                },
-                editable: true,
-                droppable: true, // this allows things to be dropped onto the calendar
-                drop: function (info) {
-                    // is the "remove after drop" checkbox checked?
-                    if (checkbox.checked) {
-                        // if so, remove the element from the "Draggable Events" list
-                        info.draggedEl.parentNode.removeChild(info.draggedEl);
-                    }
-                }
-            });
+                    var calendarEl = document.getElementById('calendar');
 
 
-            calendar.on('dateClick', function (info) {
-                var date = new Date(info.dateStr + 'T00:00:00'); // will be in local time
+                    // initialize the calendar
+                    // -----------------------------------------------------------------
 
-                if (!isNaN(date.valueOf())) { // valid?
-                    calendar.addEvent({
-                        title: 'Tarea',
-                        description: 'Lecture',
-                        start: date,
-                        allDay: true
+                    var calendar = new Calendar(calendarEl, {
+                        headerToolbar: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                        },
+                        editable: true,
+                        droppable: true, // this allows things to be dropped onto the calendar
                     });
-                    alert('Great. Now, update your database...');
-                } else {
-                    alert('Invalid date.');
-                }
-                console.log('clicked on ' + info.event.description);
-                console.log('clicked on ' + info.event);
-            });
-            calendar.render();
-        });
 
+
+                    calendar.on('dateClick', function (info) {
+                        var date = new Date(info.dateStr + 'T00:00:00'); // will be in local time
+                        var count = 0;
+                        if (!isNaN(date.valueOf())) { // valid?
+
+
+                            calendar.addEvent({
+                                id: 2,
+                                title: 'Tarea ' + count++,
+                                description: 'Descripción',
+                                start: date,
+                                allDay: true,
+                                textColor: "blue",
+                                className: 'aaa'
+                            });
+
+                        } else {
+                            console.log('Invalid date.');
+                        }
+                        var ez = calendar.getEventById(2);
+                        console.log(ez);
+                    });
+
+                    calendar.render();
+                });
+
+                $(document).click(function () {
+                    var obj = $(".fc-daygrid-event-harness");
+                    if (!obj.is(event.target) && !obj.has(event.target).length) {
+                        console.log(event.target);
+                    } else {
+                        var ad = event.target;
+                        console.log(ad.textContent);
+                    }
+                });
     </script>
 }
-<div id='external-events'>
-    <p>
-        <strong>Draggable Events</strong>
-    </p>
-
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 1</div>
-    </div>
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 2</div>
-    </div>
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 3</div>
-    </div>
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 4</div>
-    </div>
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 5</div>
-    </div>
-
-    <p>
-        <input type='checkbox' id='drop-remove' />
-        <label for='drop-remove'>remove after drop</label>
-    </p>
-</div>
 
 <div id='calendar-container'>
     <div id='calendar'></div>

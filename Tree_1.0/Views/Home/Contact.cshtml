@@ -1,81 +1,111 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-@*<form>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+
+<form>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Publicación:</label>
+        <div class="form-group col-md-1">
+            <input type="text" class="form-control" placeholder="TDY">
         </div>
-        <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Tribuna del Yaqui">
         </div>
     </div>
-    <div class="form-group">
-        <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="form-group">
-        <label for="inputAddress2">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Edición:</label>
+        <div class="form-group col-md-1">
+            <input type="text" class="form-control" placeholder="UTDY">
         </div>
-        <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-            </select>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Única TDY">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Medida:</label>
+        <div class="form-group col-md-1">
+            <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Posición:</label>
+        <div class="form-group col-md-2">
+            <input type="radio" class="form-check-input" name="1" id="exampleCheck1">
+            <label>Sin posición</label>
         </div>
         <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
+            <input type="radio" class="form-check-input" name="1" id="exampleCheck1">
+            <label>Sección</label>
+        </div>
+        <div class="form-group col-md-4">
+            <input type="radio" class="form-check-input" name="1" id="exampleCheck1">
+            <label>Par o Impar</label>
         </div>
     </div>
-    <div class="form-group">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-                Check me out
-            </label>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Color:</label>
+        <div class="form-group col-md-1">
+            <select id="inputState" class="form-control">
+                <option selected>Negro</option>
+                <option>Negro</option>
+            </select>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-</form>*@
-<script type="text/javascript">
-        $('#exampleModal').focus('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget) // Button that triggered the modal
-            var recipient = button.data('whatever') // Extract info from data-* attributes
-            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-            var modal = $(this)
-            modal.find('.modal-title').text('New message to ' + recipient)
-            modal.find('.modal-body input').val(recipient)
-        })
-</script>
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                   1
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
-            </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Giro:</label>
+        <div class="form-group col-md-1">
+            <input type="text" class="form-control" placeholder="048" />
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="AUTOSERVICIO">
         </div>
     </div>
-</div>
+    <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Guía:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Precio Unitario:</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" placeholder="0.000">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Descuento:</label>
+        <div class="form-group col-md">
+            <input type="number" class="form-control" placeholder="0.00">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Texto Factura:</label>
+        <div class="form-group col-md">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Observaciones:</label>
+        <div class="form-group col-md">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Indicaciones:</label>
+        <div class="form-group col-md">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    </div>
+    <br />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary">Limpiar</button>
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </div>
+</form>
